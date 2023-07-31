@@ -1,40 +1,59 @@
-<img src="public/images/perfil.png" align="right" />
+<img src="public/images/logGrupoVerde.png" align="right" />
+ <h1 align= left ><b>Sprint 6 Equipo Verde</b> <img src = "https://media.giphy.com/media/gF2m2JOyGReppog8hU/giphy.gif" width = 80px></h1>
 
-# Trabajo Grupal 6 Modulo 6 [![Awesome](https://cdn.jsdelivr.net/gh/sindresorhus/awesome@d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/33fparra)
+<br>
 
-Contents
-========
+<h2><b>Descripción del Proyecto</b> <img src = " https://media.giphy.com/media/GjhqaB166nKR4BoEnh/giphy.gif" width = 50px></h2>
 
- * [Descripción del Proyecto](#descripción-del-proyecto-memo)
- * [Instrucciones de Instalación](#instrucciones-de-instalación-computer)
- * [Funcionalidades](#funcionalidades-sparkles)
- * [Participantes del Grupo](#participantes-del-grupo-busts_in_silhouette)
- 
-## Descripción del Proyecto :memo:
+📝 Es bien sabido que entre las mejores recomendaciones que un programador amateur puede recibir para mejorar sus
+habilidades es “crear aplicaciones”, sin darle tanta importancia a la temática a elaborar, sino que solo basta con un
+problema para desarrollar una solución digital.
+En esta prueba deberás crear un servidor con Node que sirva una interfaz HTML que tendrás a disposición en el
+apoyo y cuya temática está basada en el registro de gastos entre co-habitantes.
+Además, deberás servir una API REST que permita hacer lo siguiente:
+● Almacenar co-habitantes nuevos usando random user.
+● Devolver todos los co-habitantes almacenados.
+● Registrar nuevos gastos.
+● Devolver el historial de gastos registrados.
+● Modificar la información correspondiente a un gasto.
+● Eliminar gastos del historial.
+A continuación se muestra una imagen con la interfaz que deberás devolver en la ruta raíz del servidor.
 
-📝 La empresa Spam Economy Spa se dedica a ofrecer el servicio de notificaciones de los indicadores
-económicos y está abriendo una sucursal en Chile, por lo que necesita un desarrollador que programe un
-servidor que reciba una lista de correos electrónicos, a los cuales se les enviará periódicamente correos
-electrónicos personalizados con los indicadores del dólar, euro, uf y utm.
-Deberás desarrollar un servidor que al ser consultado devuelva un sitio web que encontrarás en el Apoyo
-Desafío - Spam Economy Spa. En la siguiente imagen verás el formulario disponible en el HTML de apoyo,
-el cual cuenta con 3 campos: Correos destino, asunto y mensaje.
-El objetivo del desafío es lograr enviarles un correo electrónico a diferentes direcciones separadas por “,”
-en el campo “correos” del formulario. Además de concatenarle al mensaje escrito los indicadores
-económicos mencionados al inicio de la descripción de este desafío.
+![Foto de grupo](public/images/example.png)
 
-1. Usar el paquete nodemailer para el envío de correos electrónicos.
-2. Crear una función que reciba la lista de correos, asunto y contenido a enviar. Esta función debe
-retornar una promesa.
-3. Realizar una petición a la api de mindicador.cl y preparar un template que incluya los valores del
-dólar, euro, uf y utm. Este template debe ser concatenado al mensaje descrito por el usuario en el
-formulario HTML.
-4. Enviar un mensaje de éxito o error por cada intento de envío de correos electrónicos.
-5. Cada correo debe ser almacenado como un archivo con un nombre identificador único en una
-carpeta “correos”. Usar el paquete UUID para esto.
+Rutas que debes crear en tu servidor:
+● /GET: Debe devolver el documento HTML diponibilizado en el apoyo.
+● /roommate POST: Almacena un nuevo roommate ocupando random user.
+● /roommate GET: Devuelve todos los roommates almacenados.
+● /gastos GET: Devuelve el historial con todos los gastos registrados.
+● /gasto PUT: Edita los datos de un gasto.
+● /gasto DELETE: Elimina un gasto del historial.
 
+Requerimientos:
+1. Ocupar el módulo File System para la manipulación de archivos alojados en el servidor. (3pts)
+2. Capturar los errores para condicionar el código a través del manejo de excepciones. (1pt)
+3. El botón “Agregar Roommate” de la aplicación cliente genera una petición POST (sin payload) esperando que
+el servidor registre un nuevo roommate random con la API randomuser, por lo que debes preparar una ruta
+POST /roommate en el servidor que ejecute una función asíncrona importada de un archivo externo al del
+servidor (la función debe ser un módulo), para obtener la data de un nuevo usuario y la acumule en un JSON
+(roommates.json).
+El objeto correspondiente al usuario que se almacenará debe tener un id generado con el paquete UUID.
+(2pts)
+4. Crear una API REST que contenga las siguientes rutas:
+a. GET /gastos: Devuelve todos los gastos almacenados en el archivo gastos.json.
+b. POST /gasto: Recibe el payload con los datos del gasto y los almacena en un archivo JSON
+(gastos.json).
+c. PUT /gasto: Recibe el payload de la consulta y modifica los datos almacenados en el servidor
+(gastos.json).
+d. DELETE /gasto: Recibe el id del gasto usando las Query Strings y la elimine del historial de gastos
+(gastos.json).
+e. GET /roommates: Devuelve todos los roommates almacenados en el servidor (roommates.json)
+Se debe considerar recalcular y actualizar las cuentas de los roommates luego de este proceso. (3pts)
+5. Devolver los códigos de estado HTTP correspondiente a cada situación. (1pt)
 
-## Instrucciones de Instalación :computer:
+<br>
+
+<h2><b>Instrucciones de Instalación</b> <img src = "https://media.giphy.com/media/3WZJkScSyfYVl7mGLd/giphy.gif" width = 60px></h2> 
 
 ⚙️ Para instalar las dependencias necesarias, sigue los siguientes pasos:
 
@@ -46,9 +65,10 @@ carpeta “correos”. Usar el paquete UUID para esto.
 
 4. Abrir el archivo html ingresando al https://localhost:3000
 5. Llenar el formulario y enviar
-6. No olvides cambiar el user y el pass de la funcion que envia los correos por nodemailer, siguieno el siguiente tutorial: https://www.youtube.com/watch?v=KjheexBLY4A
 
-<details><summary><b>Ver las instrucciones</b></summary>
+
+<details> <img src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFtdWgyMmFrcHd4NjhuZWJ4aDJpcTlkbWlyNGQ4dDJwa2ZwZmptcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/B4AgroOi1LkdPxMllY/giphy.gif" width = 50px> <summary><b>Ver las instrucciones</b></summary> 
+
 
 1. Instalar las dependencias:
 
@@ -80,8 +100,10 @@ carpeta “correos”. Usar el paquete UUID para esto.
     "body-parse": "^0.1.0",
     "express": "^4.18.2",
     "hbs": "^4.2.0",
-    +"nodemailer": "^6.9.4",
-    "path": "^0.12.7"
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.4",
+    "path": "^0.12.7",
+    "uuid": "^9.0.0"
     }
     ````
 
@@ -92,7 +114,9 @@ carpeta “correos”. Usar el paquete UUID para esto.
 
 ✨ Con nuestra aplicacion puedes:
 
-1. Funcionalidad : En viar correo utilizando la libreria Nodemailer
+1. Funcionalidad : Agregar personas(roommates) de forma aleatoria
+2. Funcionalidad : Agregar Gastos y Descripcion de los mismos y guardarlos en un archivo .json
+3. Funcionalidad : Calcular los que deben y lo que reciben cada uno de los roommates 
 
 
 ![Foto de grupo](public/images/grupoVerde.jpg)
@@ -115,6 +139,4 @@ carpeta “correos”. Usar el paquete UUID para esto.
 
 
 <img src="public/images/logGrupoVerde.png" align="right" />
-
-## Grupo Verde (https://github.com/33fparra/Ejercicio_grupal_6.6_nodemailer)
 
