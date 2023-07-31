@@ -1,0 +1,26 @@
+[
+  {
+    "id": "b99a3f88-f660-446a-8c45-0a4cc7d53c7d",
+    "nombre": "Sonia Calvo",
+    "debe": 10000,
+    "recibe": 22500
+  },
+  {
+    "id": "56162bce-357b-4f8a-abf0-0c39e7737c36",
+    "nombre": "Abdul Hausmann",
+    "debe": 10000,
+    "recibe": 0
+  },
+  {
+    "id": "565dcfd1-433f-4388-b44e-a50e6cd44c60",
+    "nombre": "Candice Dumont",
+    "debe": 10000,
+    "recibe": 0
+  },
+  {
+    "id": "aff97ca6-01a6-4caa-a040-e176537be3f3",
+    "nombre": "Ignacio Medina",
+    "debe": 10000,
+    "recibe": 7500
+  }
+]
